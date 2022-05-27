@@ -1,7 +1,7 @@
 
 public class Person {
-	private String name;
-	private int age;
+	protected String name;
+	protected int age;
 	
 	public Person(String name,int age) {
 		this.age = age;
@@ -24,6 +24,8 @@ public class Person {
 		this.age = age;
 	}
 	
-	
+	public String toString() {
+		return "Name: " + name + "\nAge:" + age;
+	}
 
 }

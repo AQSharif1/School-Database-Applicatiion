@@ -1,74 +1,28 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-public class Student  {
-	Scanner scanner = new Scanner(System.in);
-	List<Person> students;
-	String schoolName;
-	private int studentID;
+
+public class Student extends Person {
+	private int id;
 	
-	
-	public Student() {
-		students = new ArrayList<Person>();
-	}
-	
-	public boolean addStudent(String name, int age) {
-		Person newStudent = new Person(name,age);
-		for(int i = 0; i<students.size(); i++) {
-		if(students.get(i).getName().equalsIgnoreCase(newStudent.getName())) {
-			System.out.println(name + ", Already in List\n");
-			return true;
-			}
-		}
-		students.add(newStudent);
-		System.out.println(name + ", added. \n");
-		return false;
+	public Student(String name, int age, int id) {
+		super(name, age);
+		this.id = id;
 		
 	}
-	
-	public boolean removeStudent(String name, int age) {
-		for(Person newStudent: students) {
-			if(newStudent.getName().equalsIgnoreCase(name)) {
-				students.remove(newStudent);
-				System.out.println(name + ", Removed.\n");
-				return true;
-		}
+
+	public int getId() {
+		return id;
 	}
-		System.out.println("Student not in List. ");
-		return false;
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
-	public int findStudent() {
-		System.out.println("Enter name of student: ");
-		String studentName = scanner.nextLine();
-		scanner.nextLine();
-		for (int i = 0; i < students.size(); i++ ) {
-			 {
-				if(students.get(i).getName().equalsIgnoreCase(studentName)) {
-					System.out.println("Found. " + studentName + " in position: " + i);
-					return i;
-				}
-			}
-		}
-		System.out.println(" Student Not in List.");
-		return -1;
-		
+	@Override
+	public String toString() {
+		String str = " ";
+		str= "Name: " + name + ", Age: " + age + ", Student ID: " + id;
+		return str;
 	}
 	
 	
-	public void studentList() {
-		System.out.println("************************************************");
-	System.out.println("List \n");
-		for(int i = 0; i< students.size(); i++) {
-			System.out.println("Name: " + students.get(i).getName() +"\nage: " + students.get(i).getAge() + "\n");
-		}
-		
-		if(students.size()<=0) {
-			System.out.println("List is Empty!");
-		}
-		System.out.println("*************************************************");
-	}
-	
-	
-	
+
 }
