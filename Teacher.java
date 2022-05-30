@@ -36,10 +36,12 @@ public class Teacher extends Person{
 		this.id = id;
 	}
 	
+	
+	
 	@Override
 	public String toString() {
 		String str = " ";
-		str= "Name: " + name + ", Age: " + age + ", Teacher ID: " + id + ", Teaches: " + teaches + ", Salary: " + salary;
+		str= "Name: " + name + ", Age: " + age + ", Teacher ID: " + id + ", Teaches: " + teaches;
 		return str;
 	}
 	
